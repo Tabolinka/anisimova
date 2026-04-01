@@ -204,7 +204,7 @@
       padding: 40px 140px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 40px;
     }
     .about-body {
       display: flex;
@@ -266,7 +266,7 @@
       padding: 40px 140px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 40px;
     }
     .exp-header { display: flex; flex-direction: column; gap: 24px; }
     .section-title {
@@ -309,18 +309,30 @@
     }
 
     /* ─── PORTFOLIO ─── */
+    /* ─── PORTFOLIO ─── */
     .portfolio-section {
       display: flex;
       flex-direction: column;
       gap: 80px;
-      padding-top: 80px;
       padding-bottom: 80px;
     }
     .project {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       overflow: hidden;
       padding-left: 140px;
+    }
+    .project--first {
+      align-items: center;
+    }
+    .project--first .project-gallery {
+      align-self: flex-start;
+    }
+    .project-badge-title {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: flex-start;
     }
     .project--narrow {
       gap: 94px;
@@ -338,6 +350,8 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
+      justify-content: center;
+      align-self: stretch;
     }
     .project-title {
       font-family: 'Inter', sans-serif;
@@ -353,7 +367,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      max-width: 596px;
+      max-width: 613px;
     }
     .project-details strong { font-weight: 700; }
     .project-details a { text-decoration: underline; font-weight: 700; }
@@ -366,7 +380,7 @@
       overflow: hidden;
       flex: 1;
       min-width: 0;
-      align-self: flex-end;
+      padding-top: 172px;
     }
     .gallery-track {
       display: flex;
@@ -551,6 +565,8 @@
       color: rgba(255,255,255,0.6);
     }
     .footer-nav a:hover { color: #fff; }
+    .footer-social { display: flex; align-items: center; }
+    .footer-social:hover svg { stroke: #fff; }
 
     /* ─── LIGHTBOX ─── */
     .lightbox {
@@ -613,7 +629,6 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 1160px) {
       .header-inner, .hero, .about, .experience-inner, .cta-inner, .footer-inner { padding-left: 60px; padding-right: 60px; }
-      .portfolio-badge-wrap { padding: 0 60px; }
       .project { padding-left: 60px; }
       .project--narrow { gap: 60px; }
       .project-text-only { padding: 0 60px; }
@@ -647,7 +662,6 @@
       .exp-title { font-size: 18px; }
       .exp-desc { font-size: 14px; }
 
-      .portfolio-badge-wrap { padding: 0 32px; }
       .project { padding-left: 32px; flex-direction: column; align-items: flex-start; gap: 24px; }
       .project--narrow { gap: 24px; }
       .project-text-only { padding: 0 32px; }
@@ -687,7 +701,6 @@
       .exp-title { font-size: 16px; }
       .exp-date { font-size: 24px; }
 
-      .portfolio-badge-wrap { padding: 0 20px; }
       .portfolio-section { gap: 56px; }
       .project { padding-left: 20px; }
       .project-text-only { padding: 0 20px; }
@@ -768,7 +781,7 @@
   <span class="section-badge">Обо мне</span>
   <div class="about-body">
     <div class="about-photo">
-      <img src="img/img-about.png" alt="Фото" />
+      <img src="img/img-about.jpeg" alt="Фото" />
     </div>
     <div class="about-text">
       <p class="about-quote">
@@ -825,12 +838,12 @@
 <div class="portfolio-section" id="portfolio">
 
   <!-- ── Project 1: ŠKODA ГУМ-каток ── -->
-  <div class="project" data-gallery>
+  <div class="project project--first" data-gallery>
     <div class="project-info">
-      <div style="padding:0">
+      <div class="project-badge-title">
         <span class="section-badge">Портфолио</span>
+        <h2 class="project-title">Интеграция ŠKODA на&nbsp;ГУМ-каток</h2>
       </div>
-      <h2 class="project-title">Интеграция ŠKODA на&nbsp;ГУМ-каток</h2>
       <div class="project-details">
         <p><strong>• ЦА:</strong> посетители катка, сотрудники ŠKODA, клиенты дилерских центров, СМИ и&nbsp;медиа-партнёры</p>
         <p><strong>• Площадка:</strong> ГУМ-каток</p>
@@ -1131,6 +1144,17 @@
         <div class="footer-col-label">Контакты</div>
         <a href="mailto:leravs@yandex.ru">leravs@yandex.ru</a>
         <a href="tel:+79104458234">+7 (910) 445-82-34</a>
+        <div style="display:flex; gap:12px; margin-top:6px">
+          <a href="https://instagram.com/sevastianova" target="_blank" aria-label="Instagram" class="footer-social">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#fff" stroke="none"/></svg>
+          </a>
+          <a href="https://t.me/Valerya_seva" target="_blank" aria-label="Telegram" class="footer-social">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.2 4.4 2.4 10.7c-.6.2-.6.9 0 1.1l4.6 1.7 1.8 5.5c.1.4.6.6.9.3l2.6-2.1 5 3.7c.5.4 1.2.1 1.3-.5L22.4 5.5c.2-.8-.5-1.4-1.2-1.1z"/><path d="m8.8 13.5 8.9-6.5"/></svg>
+          </a>
+          <a href="https://hh.ru/resume/5e8fc415ff01a05c270039ed1f5a6a57396e73?from=share_ios" target="_blank" aria-label="HeadHunter" class="footer-social">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><text x="2" y="18" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="16" fill="#fff">hh</text></svg>
+          </a>
+        </div>
       </div>
 
       <nav class="footer-nav" aria-label="Навигация">
